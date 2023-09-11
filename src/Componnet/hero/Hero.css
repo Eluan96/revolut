@@ -7,8 +7,9 @@
 .hero__section{
     align-items: center;
     background:url(/src/img/Hero.png);
-    background-size: cover;
+    background-size: contain;
+    background-position: center center;
+    /* background-attachment: fixed; */
     display: flex;
     justify-content: space-between;
-    min-height: 80vh;
 }

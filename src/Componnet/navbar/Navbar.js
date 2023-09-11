@@ -2,9 +2,9 @@ import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 
 const navigation = [
-    { name: 'Product', href: '#' },
-    { name: 'Features', href: '#' },
-    { name: 'Marketplace', href: '#' },
+    { name: 'Personal', href: '#' },
+    { name: 'Business', href: '#' },
+    { name: 'Revolut <18', href: '#' },
     { name: 'Company', href: '#' },
   ]
 
@@ -13,17 +13,10 @@ const navigation = [
 
   return (
     <div>
-          <header className="absolute inset-x-0 top-0 z-50">
-        <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
-          <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
-              <img
-                className="h-8 "
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                alt=""
-              />
-            </a>
+          <header className="absolute inset-x-0 top-0 z-50 ">
+        <nav className="flex items-center justify-between p-6 lg:px-8 fixed top-0 left-0 w-full shadow-md bg-slate-50" aria-label="Global">
+          <div className="ml-[12%] mr-[3%] text-4xl font-semibold">
+            <h1>Revolut</h1>
           </div>
           <div className="flex lg:hidden">
             <button
@@ -37,15 +30,14 @@ const navigation = [
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
             {navigation.map((item) => (
-              <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900">
+              <a key={item.name} href={item.href} className="text-md leading-6 text-gray-900">
                 {item.name}
               </a>
             ))}
           </div>
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-              Log in <span aria-hidden="true">&rarr;</span>
-            </a>
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end mr-[10%]">
+              <button className='shadow-lg bg-white mr-5 w-[20%] p-2 rounded-2xl'>Log in</button>
+              <button className='shadow-lg bg-black mr-5 w-[20%] p-2 rounded-2xl text-white'>Sign up</button>
           </div>
         </nav>
         <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
